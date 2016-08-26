@@ -1,4 +1,40 @@
-<!--
+<%= form_for @user do |f| %>
+	<%= f.label :username, "Enter Your Username" %><br>
+	<%= f.text_field :username, placeholder: "Username" %><br><br>
+
+	<%= f.label :email, "Email" %><br>
+	<%= f.text_field :email, placeholder: "foo@bar.com" %><br><br>
+
+	<%= f.label :password, "Password" %><br>
+	<%= f.text_field :password,placeholder: "Password" %><br><br>
+
+	<%= f.label :password_confirmation, "Confirm Your Password" %><br>
+	<%= f.text_field :password_confirmation %><br><br>
+
+	<%= f.submit "Create" %>
+<% end %>
+
+<!-- Railsy Form with #form_tag
+<%= form_tag("/users", method:"post") do %>
+	<%= label_tag(:username, "Username") %>
+	<%= text_field_tag(:username) %>
+
+	<%= label_tag(:email, "Email") %>
+	<%= text_field_tag(:email) %>
+
+	<%= label_tag(:password, "Password") %>
+	<%= text_field_tag(:password) %>
+
+	<%= label_tag(:password_confirmation, "Password_confirmation") %>
+	<%= text_field_tag(:password_confirmation) %>
+
+	<%= submit_tag("Create") %>
+<% end %>
+-->	
+
+
+
+<!-- HTML From
 <form accept-charset="UTF-8" action="/users" method="post">
 
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -18,19 +54,3 @@
 	<input name="commit" type="submit" value="Create">
 </form>
 -->
-
-<%= form_tag("/users", method:"post") do %>
-	<%= label_tag(:username, "Username") %>
-	<%= text_field_tag(:username) %>
-
-	<%= label_tag(:email, "Email") %>
-	<%= text_field_tag(:email) %>
-
-	<%= label_tag(:password, "Password") %>
-	<%= text_field_tag(:password) %>
-
-	<%= label_tag(:password_confirmation, "Password_confirmation") %>
-	<%= text_field_tag(:password_confirmation) %>
-
-	<%= submit_tag("Create") %>
-<% end %>	
